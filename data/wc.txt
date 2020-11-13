@@ -1,0 +1,82 @@
+Medical researchers are raising significant doubts about whether an agent of the human immune system causes some coronavirus patients to end up in the hospital with injured lungs and other organs, struggling to breathe. What remains is a continuing mystery about what causes certain people to die from Covid-19, and how best to prevent that.
+
+A hypothesis that emerged early in the pandemic involves cytokine storms, an immune system response that is often invoked to explain severe viral infections, and to many doctors it seemed to make perfect sense: Patients who died from Covid were found to sometimes have little or no virus in their bodies. Their immune systems got rid of it. But in doing so, the hypothesis went, their body’s defenses went rogue, spewing out powerful compounds — cytokines and other drivers of inflammation — that fatally damaged tissues and organs in a storm.
+
+But in a number of recent studies, some researchers say, an agent suspected of causing the storms might not be the culprit or that such storms might not happen in the way doctors believed.
+
+Not everyone agrees.
+
+Dr. Randy Cron, a professor of pediatrics and medicine at the University of Alabama at Birmingham who has long studied cytokine storms, says some hospitalized Covid-19 patients do experience these immune overreactions. But he agrees they are not identical to the reactions seen in other disorders, and much remains to be learned.
+
+The storm idea has so far centered on one cytokine, interleukin-6, or il-6. The belief that it might be the culprit in certain Covid deaths began with reports from China early in the course of the pandemic. Doctors there said a patient who fared poorly had high levels of il-6. The doctors tried using drugs that block il-6, and the patient recovered. Similar reports followed there and in Italy.
+
+A number of drugs that block il-6 are on the market to treat rheumatoid arthritis. They also can stop severe immune reactions in other situations, such as a cytokine release syndrome that can occur with some cancer treatments and with adult onset Still’s disease, a rare form of inflammatory arthritis. But, said Dr. John Stone, a professor of medicine at Harvard, “these are not infections.”
+
+Thanks for reading The Times.
+Subscribe to The Times
+Nonetheless, anti-il-6 drugs quickly became a standard of care at many hospitals treating Covid patients. The idea that they were quelling cytokine storms became widely accepted.
+
+“It is so easy to have your brain remember the cases that worked really well and ignore those that didn’t work well,” said Dr. Bruce Walker, an immunologist who is director of the Ragon Institute of Massachusetts General Hospital, M.I.T. and Harvard and was not involved in the new studies.
+
+Now rigorous studies are failing to find that anti il-6 drugs are effective. Other studies are finding that il-6 levels are not even highly elevated in Covid patients compared to levels in other critically ill patients.
+
+Editors’ Picks
+
+How Hasan Piker Took Over Twitch
+
+Elijah Daniel, Agent of Chaos
+
+The Good News/Bad News About Ice Skating at Rockefeller Center
+Continue reading the main story
+Three such studies, two published in JAMA Internal Medicine and one in the New England Journal of Medicine, found no evidence that a commonly used il-6 inhibitor, tocilizumab, a rheumatoid arthritis treatment, reduced the death rates in severely ill coronavirus patients. Roche, which makes tocilizumab, did its own tests in Covid patients and reported that its drug was not helpful.
+
+
+ImageTocilizumab, a commonly used il-6 inhibitor, has not been shown to help fight Covid-19.
+Tocilizumab, a commonly used il-6 inhibitor, has not been shown to help fight Covid-19.Credit...Pascal Rossignol/Reuters
+One issue is with the very term, cytokine storm.
+
+“It has no definition,” said Dr. Carolyn Calfee, an intensive care medicine specialist at the University of California in San Francisco. It is colorful and captured the imagination of doctors and much of the public, but with no definition there are no diagnostic criteria to show that such a thing is taking place.
+
+And even if there is, il-6 might be a bystander rather than a driver. Hundreds of cytokines are released when the immune system goes into action. They drive and suppress one another in complex feedback loops.
+
+“You take this thing like spaghetti that is connected in so many different ways,” Dr. Walker said. It is optimistic, he added, to think il-6 “will be the answer to everything.”
+
+Until recently, there were no systematic studies asking if il-6 levels really were unusually high in Covid patients.
+
+It turns out that they often are not, recent research suggests.
+
+Dr. Jonathan Parr, an infectious disease specialist at the University of North Carolina checked il-6 levels in his medical center’s Covid patients early in the pandemic. They were difficult to interpret but generally were well below those seen in other inflammatory syndromes, like sepsis, where they are 27 times higher.
+
+Dr. Calfee reviewed measurements reported in five studies with a total of more than 900 seriously ill coronavirus patients. Their il-6 levels ranged from normal to slightly higher.
+
+And even when cytokine levels are sky high, as in sepsis, drugs that squelch immune reactions do not help, Dr. Stone said. Failed sepsis studies go back to the late 1980s, he said, when researchers tested etanercept, a drug used to treat autoimmune diseases. It blocks another cytokine, tumor necrosis factor, which, like il-6 is released by white blood cells in sepsis patients.
+
+Etanercept turned out to increase the death rate in those patients.
+
+Dr. William Fischer, a pulmonary and critical care physician at the University of North Carolina, said the idea of a cytokine storm “comes up in every severe viral infection.” Examples include AIDS, Ebola, flu, Lassa fever, SARS and MERS, he said.
+
+But, he said, “it can be difficult to tease apart what drives pathology — whether it’s just the virus or both the virus and the very immune response that is needed to clear the virus.”
+
+“The next step should be a randomized clinical trial,” in which patients are randomly assigned to receive the experimental treatment or not. Instead, Dr. Fischer said, trials, if they started at all, tended to begin after tens of thousands of patients had already gotten the drugs, which muddied the ability to prove safety and effectiveness.
+
+So if not for this cytokine storm, what could be injuring the patients?
+
+Inflammation from a variety of immune system overreactions may play a role, researchers said. One piece of evidence is that the steroid, dexamethasone, which broadly suppresses the immune system, can reduce the death rate.
+
+But il-6 is not the only possible driver of a damaging immune response, Dr. Stone said. Other inflammatory chemicals such as ferritin appear and so does CRP, a protein that is a sign of inflammation.
+
+Many Covid patients also suffer from blood clots, which themselves might be damaging lungs and other organs.
+
+Dr. Walker cites another possibility. He was an author of a study that found that the virus can destroy germinal centers, places in lymph nodes where antibodies are produced. The result can be fewer antibodies and less effective ones.
+
+And it still remains possible that administering anti-il-6 drugs may help if done earlier or later during a patient’s illness.
+
+“We need randomized clinical trials to answer these hard questions,” Dr. Stone said.
+
+Dr. Calfee said the new findings should be teaching doctors a lesson.
+
+“We have to be really humble about biologic complexity,” she said.
+
+For now, Dr. Walker said, he and many others are sadder but wiser about using anti il-6 drugs to treat Covid patients.
+
+“All of us were hopeful that this would work,” he said. “It was definitely worth a try.”

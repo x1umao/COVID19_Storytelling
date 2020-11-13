@@ -1,0 +1,23 @@
+.click-only-text {
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+.click-only-text::selection {
+    background: none;
+  }
+
+.word-default {
+    fill: #fffce1;
+    font-weight: normal;
+  }
+.word-hovered {
+    fill: #fffce1;
+    font-weight: bold;
+  }
+.word-selected {
+    fill: #cecbb7;
+    font-weight: bold;
+  }

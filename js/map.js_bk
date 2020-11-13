@@ -1,0 +1,59 @@
+srcURL_cases = 'https://covid.ourworldindata.org/data/ecdc/total_cases.csv';
+// srcURL_deaths = 'https://covid.ourworldindata.org/data/ecdc/total_deaths.csv';
+// var data_deaths = d3.csv(srcURL_deaths);
+
+var data_cases = Object();
+var countries = Object()
+var countryIndex = Object()
+var allDateValues = Array()
+
+d3.csv(srcURL_cases).then(d => {
+    data_cases =d;
+    countries = d.columns.slice(2, data_cases.length);
+    for (let i = 0; i < countries.length; i++) {
+        countryIndex[countries[i]] = i;
+    }
+    d.forEach(element => {
+        allDateValues.push(element.date)
+    });
+});
+
+
+
+
+function draw(date_it) {
+    let theDayStr = allDateValues[date_it];
+    getCountryDayData = function (dataSource, theDay) {
+        let filtered_data = dataSource.filter(a => a['date'] == theDay)[0];
+        return Array(countries.length).fill(1).map((x, i) => parseFloat(filtered_data[countries[i]]))
+    }
+    let trace1 = {
+        type: 'choropleth',
+        locationmode: 'country names',
+        locations: countries,
+        z: getCountryDayData(data_cases,theDayStr),
+        text: countries,
+        autocolorscale: true
+        
+    };
+    let layout = {
+        title: 'Covid-19 Cases reported on ' + theDayStr,
+        paper_bgcolor: '#358ebc',
+        geo: {
+            projection: { type: 'robinson' },
+            bgcolor: '#358ebc',
+            scale: 0.5
+        }
+    };
+    const div = document.querySelector('#map_container');
+    Plotly.newPlot(div, [trace1], layout);
+}
+
+function startMap(){
+    let counter = 0;
+    setInterval(d=>{
+        if(counter<allDateValues.length){
+            draw(counter++)
+        }
+    },50);
+};

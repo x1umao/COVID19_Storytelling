@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3.v5.js"></script>
+</head>
+
+<body>
+
+    <div id="my_dataviz1" style="position: relative;">
+        <span style="position: absolute; top: 0; left: 0;"><svg class="unemp"></svg></span>
+    </div>
+    <!-- Color Scale -->
+
+    <script>
+        d3.csv("data/p1.csv").then(function (data) {
+            // List of groups (here I have one group per column)
+            var allGroup = ["Overall", "Citizen", "Resident"]
+
+            // Reformat the data: we need an array of arrays of {x, y} tuples
+            var dataReady = allGroup.map(function (grpName) { // .map allows to do something for each element of the list
+                return {
+                    name: grpName,
+                    values: data.map(function (d) {
+                        return { time: d.time, value: +d[grpName] };
+                    })
+                };
+            });
+            // set the dimensions and margins of the graph
+            var margin = { top: 10, right: 30, bottom: 30, left: 60 },
+                width = 1000 - margin.left - margin.right,
+                height = 550 - margin.top - margin.bottom;
+            // append the svg object to the body of the page
+            var svg = d3.select("#my_dataviz1").select(".unemp")
+                .attr("width", 1000 + margin.left + margin.right)
+                .attr("height", height + margin.top + margin.bottom)
+                // .style("border-color", "#024C68")
+                // .style("border-style", "solid")
+                // .style("border-width", "2px")
+                .style("margin-bottom", '20px')
+                .append("g")
+                .attr("transform",
+                    "translate(" + margin.left + "," + margin.top + ")");
+            // let title = svg.append('text')
+            //     .attr('class', 'title')
+            //     .attr('y', 100)
+            //     .attr('x', 650)
+            //     .text('Unemployment Rate (%)')
+            //     .attr('fill', '#024C68');
+            // var str = "With the outbreak of the epidemic,@the unemployment rate@has increased significantly,@leading to an increase@in the number of unemployed people.@Unfortunately,@I have lost my job";
+            // var strs = str.split("@");
+            // let describe = svg.append('text')
+            //     .attr('class', 'describe')
+            //     .attr('y', height / 2)
+            //     .attr('x', 650)
+            //     .attr('fill', '#024C68');
+
+            // describe.selectAll("tspan")
+            //     .data(strs)
+            //     .enter()
+            //     .append("tspan")
+            //     .attr("x", describe.attr("x"))
+            //     .attr("dy", "1em")
+            //     .text(function (d) {
+            //         return d;
+            //     });
+
+            //Read the data
+
+            // I strongly advise to have a look to dataReady with
+            // console.log(dataReady)
+
+            // A color scale: one color for each group
+            var myColor = d3.scaleOrdinal()
+                .domain(allGroup)
+                .range(d3.schemeSet2);
+
+            // Add X axis --> it is a date format
+            var x = d3.scaleLinear()
+                .domain([2015, 2020.5])
+                .range([0, width]);
+            svg.append("g")
+                .attr("transform", "translate(0," + height + ")")
+                .call(d3.axisBottom(x).ticks(7).tickFormat(d3.format("d")));
+
+            // Add Y axis
+            var y = d3.scaleLinear()
+                .domain([1, 5])
+                .range([height, 0]);
+            svg.append("g")
+                .call(d3.axisLeft(y));
+
+            // Add the lines
+            var line = d3.line()
+                .x(function (d) { return x(+d.time) })
+                .y(function (d) { return y(+d.value) })
+            svg.selectAll("myLines")
+                .data(dataReady)
+                .enter()
+                .append("path")
+                .attr("class", function (d) { return d.name })
+                .attr("d", function (d) { return line(d.values) })
+                .attr("stroke", function (d) { return myColor(d.name) })
+                .style("stroke-width", 4)
+                .style("fill", "none")
+
+
+
+            // Add the points
+            svg
+                // First we need to enter in a group
+                .selectAll("myDots")
+                .data(dataReady)
+                .enter()
+                .append('g')
+                .style("fill", function (d) { return myColor(d.name) })
+                .attr("class", function (d) { return d.name })
+                // Second we need to enter in the 'values' part of this group
+                .selectAll("myPoints")
+                .data(function (d) { return d.values })
+                .enter()
+                .append("circle")
+                .attr("cx", function (d) { return x(d.time) })
+                .attr("cy", function (d) { return y(d.value) })
+                .attr("r", "4px")
+                .attr("stroke", "white")
+
+
+            // Add a label at the end of each line
+            svg
+                .selectAll("myLabels")
+                .data(dataReady)
+                .enter()
+                .append('g')
+                .append("text")
+                .attr("class", function (d) { return d.name })
+                .datum(function (d) { return { name: d.name, value: d.values[d.values.length - 1] }; }) // keep only the last value of each time series
+                .attr("transform", function (d) { return "translate(" + x(d.value.time) + "," + y(d.value.value) + ")"; }) // Put the text at the position of the last point
+                .attr("x", 12) // shift the text a bit more right
+                .text(function (d) { return d.name; })
+                .style("fill", function (d) { return myColor(d.name) })
+                .style("font-size", 15)
+
+            // Add a legend (interactive)
+            svg
+                .selectAll("myLegend")
+                .data(dataReady)
+                .enter()
+                .append('g')
+                .append("text")
+                .attr('x', function (d, i) { return 30 + i * 60 })
+                .attr('y', 30)
+                .text(function (d) { return d.name; })
+                .style("fill", function (d) { return myColor(d.name) })
+                .style("font-size", 15)
+                .style("cursor", "pointer")
+                .on("click", function (d) {
+                    // is the element currently visible ?
+                    currentOpacity = d3.selectAll("." + d.name).style("opacity")
+                    // Change the opacity: from 0 to 1 or from 1 to 0
+                    d3.selectAll("." + d.name).transition().style("opacity", currentOpacity == 1 ? 0 : 1)
+
+                })
+        })
+    </script>
+</body>
+
+</html>

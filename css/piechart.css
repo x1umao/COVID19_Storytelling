@@ -1,0 +1,60 @@
+.title {
+    font-size: 30px;
+    font-weight: 500;
+    font-family: 'Flamenco', Arial, sans-serif;
+    color: #024C68;
+}
+
+.describe {
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Flamenco', Arial, sans-serif;
+    color: #024C68;
+}
+
+#aaa {
+    position: absolute;
+    left: 380px;
+    top: 0px;
+}
+
+text {
+    font-size: 20px;
+    font-family: 'Flamenco', Arial, sans-serif;
+}
+
+svg {
+    display: block;
+    float: left;
+    z-index: 9;
+}
+
+#test2 {
+    height: 600px;
+    width: 500px;
+}
+
+#test1 {
+    height: 600px;
+    width: 500px;
+}
+
+.nvd3.nv-pie.nv-chart-donut2 .nv-pie-title {
+    fill: rgba(70, 107, 168, 0.78);
+}
+
+.nvd3.nv-pie.nv-chart-donut1 .nv-pie-title {
+    opacity: 0.4;
+    fill: rgba(224, 116, 76, 0.91);
+}
+
+#my_dataviz1 {
+    left: 100px;
+    top: 300px;
+}
+
+#last {
+    float: right;
+    /* margin-top: px; */
+    margin-right: 200px;
+}

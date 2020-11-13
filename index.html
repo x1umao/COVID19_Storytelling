@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COVID-19 Storytelling</title>
+	<meta name="description" content="COVID-19 Storytelling" />
+	<meta name="keywords" content="slideshow, wobbly, jelly, effect, svg, snap.svg, web design" />
+	<meta name="author" content="Codrops" />
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link href='http://fonts.googleapis.com/css?family=Flamenco' rel='stylesheet' type='text/css'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/slideshow.css" />
+	<link rel="stylesheet" href="css/wc.css">
+
+	<script src="js/snap.svg-min.js"></script>
+	<script src="js/modernizr.custom.js"></script>
+	<script src="js/d3-array.v2.min.js"></script>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+	<script src="js/topojson.min.js"></script>
+	<script src="js/d3.layout.cloud.js"></script>
+
+
+
+</head>
+
+<body>
+	<div class="container">
+		<div id="slideshow" class="slideshow">
+			<ul>
+				<li>
+					<div class="slide">
+						<div id="cover">
+							<h1>My COVID-19 Story</h1>
+							<img src="img/500w/head.png" id="headImg" style="width: 30%;" />
+						</div>
+						<div id="firstPage" style="display: none;">
+							<img class="icon" src="img/500w/5.png" />
+							<h1>I am Li Hua, I am going to Singapore for my Master degree. Hope I can have a good time there and visit other countries in South East Asia during the vocation.</h1>
+							<img src="img/city.svg" style="width: 73%; margin-top: 7%;" />
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<img class="icon" src="img/500w/3.png" />
+						<div>
+							<h1>OMG! The virus is spreading so fast! Hope my friends staying safe in other counries. </h1>
+							<img src="img/breaknews.png" id="map_button" style="width: 50%;">
+						</div>
+						<div id="map_container" style="margin-top: 7%;"></div>
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<img class="icon" src="img/500w/2.png" alt="Letter Icon" />
+						<h1>What can we mostly hear in recent months from newspaper?<br></h1>
+						
+						<img src="img/newspaper.png" id='wc_btn' style="width: 39%;float: left;margin-left: 19%;">
+						<div id="wc_container" style="width: 61%;float: left;margin-left: 9%;"></div>
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<img class="icon" src="img/500w/4.png" alt="Football Icon" />
+						<h1>Let me focus on cases in Singapore.</h1>
+						<iframe src="piechart.html" frameborder="0" width="80%" height="610"></iframe>
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<img class="icon" src="img/500w/2.png" alt="Match Icon" />
+						<h1>The empolyment market in Singapore also suffered from COVID-19... </h1>
+						<iframe src="linechart.html" frameborder="0" height="600" width="75%" style="float: right;"></iframe>
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<img class="icon" src="img/boy.png" alt="Watch Icon" />
+						<h1 id='sgCOVIDtext'>The situation is gradually under control. Hope I can take more face-to-face classes next semester.</h1>
+						<img src="img/sgCOVID.svg" style="height: 70%;">
+					</div>
+				</li>
+				<li>
+					<div class="slide">
+						<h1>Hope life can return to normal sooner!</h1>
+						<img src="img/maskMan.png" id="headImg" style="width: 30%;" />
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<script src="js/classie.js"></script>
+	<script src="js/sliderFx.js"></script>
+
+	<script src="js/map.js"></script>
+	<script src="js/wc.js"></script>
+	<script src="js/animation.js"></script>
+	<script>
+		(function () {
+			new SliderFx(document.getElementById('slideshow'), {
+				easing: 'cubic-bezier(.8,0,.2,1)'
+			});
+		})();
+	</script>
+</body>
+
+</html>
